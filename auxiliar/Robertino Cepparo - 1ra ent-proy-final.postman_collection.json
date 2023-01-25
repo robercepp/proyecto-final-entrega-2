@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "4878d50e-5d23-4a05-a813-409251befd86",
+		"name": "Robertino Cepparo - 2da ent-proy-final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "ver todos los productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						},
+						"description": "ver todos los productos"
+					},
+					"response": []
+				},
+				{
+					"name": "ver producto por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"1"
+							]
+						},
+						"description": "ver producto por id"
+					},
+					"response": []
+				},
+				{
+					"name": "crear nuevo producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nombre\": \"NOMBREDEPRODUCTO\", \"precio\": 1, \"codigo\": \"CATEGORIADEPRODUCTO\", \"thumbnail\": \"URLDEIMAGEN\", \"stock\": 1, \"detalle\": \"DESCRIPCIONDEPRODUCTO\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						},
+						"description": "crear producto"
+					},
+					"response": []
+				},
+				{
+					"name": "modificar producto por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nombre\": \"NOMBREDEPRODUCTO\", \"precio\": 1, \"codigo\": \"CATEGORIADEPRODUCTO\", \"thumbnail\": \"URLDEIMAGEN\", \"stock\": 1, \"detalle\": \"DESCRIPCIONDEPRODUCTO\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/productos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"1"
+							]
+						},
+						"description": "modifica un producto por id"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"1"
+							]
+						},
+						"description": "elimina un producto por id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "ver todos los usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "Listar todos los usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "ver usuario por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuarios/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						},
+						"description": "lista usuario mediante una id"
+					},
+					"response": []
+				},
+				{
+					"name": "crear usuario nuevo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nombre\": \"NOMBREAQUI\", \"apellido\": \"APELLIDOAQUÍ\", \"usuario\": \"NOMBREDEUSUARIOAQUI\", \"email\": \"EMAILAQUÍ\", \"contrasena\": \"CONTRASEÑAAQUI\", \"admin\": \"true\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "crea un nuevo usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Loguear usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\": 1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"login"
+							]
+						},
+						"description": "Notifica al servidor que el usuario con el id asigando ha sido logueado"
+					},
+					"response": []
+				},
+				{
+					"name": "modificar usuario por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nombre\": \"NOMBREAQUI\", \"apellido\": \"APELLIDOAQUÍ\", \"usuario\": \"NOMBREDEUSUARIOAQUI\", \"email\": \"EMAILAQUÍ\", \"contrasena\": \"CONTRASEÑAAQUI\", \"admin\": \"true\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						},
+						"description": "modifica un usuario existente por id"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar usuario por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuarios/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						},
+						"description": "elimina un usuario por id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "carrito",
+			"item": [
+				{
+					"name": "Listar todos los carritos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carrito",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito"
+							]
+						},
+						"description": "lista todos los carritos"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar carrito por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carrito/1/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1",
+								"productos"
+							]
+						},
+						"description": "ver el carrito según id de usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar carrito por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carrito/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1"
+							]
+						},
+						"description": "Borra el carrito completo del usuario segun id"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear carrito vacío de usuario logueado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carrito",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito"
+							]
+						},
+						"description": "Crea un carrito vacío al usuario que se encuentre logueado, si ya existe lo deja como está."
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar producto al carrito según id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cantidad\": 1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/carrito/1/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1",
+								"productos"
+							]
+						},
+						"description": "Agrega un producto al carrito del usuario logueado según id del producto (en cuerpo se debe especificar la cantidad de productos a agregar)"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto según id usuario e id prod. ",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carrito/1/productos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1",
+								"productos",
+								"1"
+							]
+						},
+						"description": "Elimina un producto específico según el id del usuario y el id del producto cargado"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

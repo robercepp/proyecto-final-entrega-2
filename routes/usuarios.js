@@ -1,37 +1,20 @@
-//class
-const Usuarios = require("../classes/users.js");
-const user = new Usuarios("./db/users.txt");
+const express = require ('express')
+const router = express.Router()
 
-//usuarios
+//controllers requeridos
+const usr = require('../controllers/usuarios.js')
 
-async function listAll(req, res) {
-    const resultado = await user.getAll();
-    return res.send(resultado);
-}
+//rutas de usuarios
+router.get("/", usr.listAll);
 
-async function listById(req, res) {
-    const resultado = await user.getById(req.params.id);
-    return res.send(resultado);
-}
+router.get("/:id", usr.listById);
 
-async function createUser(req, res) {
-    const resultado = await user.save(req.body);
-    return res.send(resultado);
-}
+router.post("/", usr.createUser);
 
-async function modifyUser(req, res) {
-    const resultado = await user.update(req.body, req.params.id);
-    return res.send(resultado);
-}
+router.put("/:id", usr.modifyUser);
 
-async function deleteUser(req, res) {
-    const resultado = await user.deleteById(req.params.id);
-    return res.send(resultado);
-}
+router.delete("/:id", usr.deleteUser);
 
-function login(req, res) {
-    const resultado = user.userLogged(req.body)
-    return res.send(resultado)
-}
+router.post('/login', usr.login)
 
-module.exports = { listAll, listById, createUser, modifyUser, deleteUser, login }
+module.exports = router;

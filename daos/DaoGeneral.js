@@ -5,11 +5,25 @@ const CarritosFirebase = require ('./carritos/CarritosDaoFirebase.js');
 const ProductosFileSystem = require ('./productos/ProductosDaoFileSystem.js')
 const CarritosFileSystem = require ('./carritos/CarritosDaoFileSystem.js')
 
-const mongoProds = new ProductosMongo();
-const mongoCarts = new CarritosMongo();
-const firebaseProds = new ProductosFirebase();
-const firebaseCarts = new CarritosFirebase();
-const filesystemProds = new ProductosFileSystem();
-const filesystemCarts = new CarritosFileSystem();
+const {persistenceType} = require('../config.js')
 
-module.exports = {mongoProds, mongoCarts, firebaseProds, firebaseCarts, filesystemProds, filesystemCarts}
+let productDao = null;
+let cartDao = null;
+
+if (persistenceType === "filesystem") {
+  productDao = new ProductosFileSystem();
+  cartDao = new CarritosFileSystem();
+}
+
+if (persistenceType === "mongo") {
+  productDao = new ProductosMongo();
+  cartDao = new CarritosMongo();
+}
+
+if (persistenceType === "firebase") {
+    console.log("hola")
+  productDao = new ProductosFirebase();
+  cartDao = new CarritosFirebase();
+}
+
+module.exports = { productDao, cartDao }
